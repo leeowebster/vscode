@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html {
+            font-family: sans-serif;
+            font-size: 18px;
+            justify-items: center;
+            justify-content: center;
+            display: flex;
+        }
+        .paineis {
+            display: flex;
+            background-color: red;
+            max-width: 70%;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            flex-direction: row;
+        }
+
+        .painel {
+            font-size: 35px;
+            display:flex;
+            flex-direction: column;
+            border: solid black; 
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+        }
+        .links {
+            display:flex;
+            flex: 1;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="paineis">
+        <div class="painel">
+            Home
+        </div>
+        <div class="painel">
+            Sobre
+        </div>
+        <div class="painel">
+            Quem sou
+        </div>
+        <div class="painel">
+            Saiba mais
+            <div class="links">
+                <a href="/mais">Mais</a>
+                <a href="/mais2">Mais2</a>
+                <a href="/mais3">Mais3</a>
+                <a href="/mais4">Mais4</a>
+            </div>
+        </div>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, quasi minima consequuntur fugit voluptate eaque, molestiae in nemo ipsa quaerat explicabo perspiciatis quo fuga qui! Sapiente in quisquam recusandae alias.</p>
+    
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site do leleo</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            font-family: sans-serif;
+            font-size: 18px;
+        }
+        a {
+            text-decoration: none;
+        }
+        .menus{
+            text-decoration: none;
+            flex:1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+		    -moz-box-shadow:    9px 7px 5px rgba(50, 50, 50, 0.77);
+		    box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            width: 70%;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+        }
+
+        @font-face {
+            font-family: san-francisco;
+            src: url(C:\Users\lewquinteiro\Desktop\San_Francisco\woff\san_francisco-webfont.woff);
+        }
+        ul li{
+            font-family: san-francisco;
+            text-shadow: #CCC 1px 0 10px;
+            color: black;
+            display: flex;
+            position: relative;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            height: 100px;           
+        }
+        .submenu {
+            left: -2px;
+            top: 100px;
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+        }
+        .submenu a {
+            text-decoration: none;
+            justify-content: center;
+            display: flex;
+            border: 2px solid black;
+            width: 100%;
+        }
+
+        li:hover .submenu{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <div class="menus">
+    <ul>
+        <img src='C:\Users\lewquinteiro\Desktop\potato.png' alt="" width="200px">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">QQUEM SOU</a></li>
+        <li><a href="#">LOCALIZAÇÃO</a></li>
+        <li><a href="#">SAIBA MAIS</a>
+            <ul class="submenu">
+                <a href="#">Contato</a>
+                <a href="#">Parente</a>
+            </ul>
+        </li>
+    </ul>
+    </div>
+</header>
+</body>
+</html>

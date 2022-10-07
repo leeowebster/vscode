@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: sans-serif;
+            font-size: 12px;
+        }
+
+        .menu {
+            list-style: none;
+            border: 1px solid black;
+            float: left;
+        }
+
+        .menu li {
+            position: relative;
+            float: left;
+            border-right: 1px solid black;
+        }
+        .menu li a{color:#333;
+            text-decoration:none;
+            padding:5px 10px;
+            display:block;}
+
+        .menu li a:hover{
+            background:#333;
+            color:#fff;     
+            /* box-shadow: 0 3px 10px 0 #CCC; */
+            /* text-shadow:0px 0px 5px #fff; */
+            }
+       
+        .sub.bl{ 
+            display: block;
+            
+        }
+
+        .sub {
+        border:1px solid #c0c0c0;
+        display:none;
+        margin: 0;
+        width:150px;
+        position: absolute;       
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Sobre</a></li>
+                    <li><a href="#" class="sub.bl">O que fazemos?</a>
+                       <ul class="sub">
+                            <a href="#">Web Design</a></li>
+                            <a href="#">SEO</a></li>
+                            <a href="#">Design</a></li>
+                         </ul>
+                  </li>
+              <li><a href="#">Links</a></li>
+              <li><a href="#">Contato</a></li>
+      </ul>
+      </nav>
+
+      <script>
+        function aparece(){
+            console.log('oi')
+            this.classList.toggle('.bl')
+        }
+        const menin = document.getElementsByClassName('sub');
+        menin.addEventListener('click', aparece, false);
+      </script>
+    </body>
+
+</html>
