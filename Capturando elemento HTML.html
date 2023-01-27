@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamos testar</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            place-items: center;
+        }
+        div{
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Vamos testar essa bichera</p><br>
+    
+    <form class="calculo">
+        <p><input type="text" id="primeiro" >
+            <br><input type="text" id="fnum" > <input type="submit" class="enviar">
+
+        <div id="res">
+            asdasdasd
+        </div>
+    </form> 
+</div>
+    <script>
+        
+        let formm = document.querySelector('.calculo')
+        formm.addEventListener('submit', resultado);
+
+
+        function resultado(e){
+            e.preventDefault();
+            const a = parseInt(document.getElementById('primeiro').value);
+            const b = parseInt(document.getElementById('fnum').value);
+            const res = document.getElementById('res');
+            const soma = a + b;
+            res.innerHTML = soma;
+        }
+
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+<script>
+    const lista =[];
+    const secretCode = 'wesbos'
+
+    window.addEventListener('keyup', (e) =>{
+        console.log(e.key)
+        lista.push(e.key);
+        lista.splice(-secretCode.length -1, lista.length - secretCode.length);
+        console.log(lista)
+        if (lista.join('').includes(secretCode)){
+            console.log('KATAPIMBA')
+        }
+
+    })
+
+</script>
+</body>
+</html>
