@@ -21,17 +21,48 @@ const stages = [
 function App() {
   const [gameStage, setGameStage] = useState(stages[0].name)
   const [words] = useState (wordsList)
-  
+
+  const [pickedWord, setPickedWord] = useState('')
+  const [pickedCategory, setPickedCategory] = useState('')
+  const [letters, setLetters] = useState('')
+
+  const [guessedLetters, setGuessedLetters] = useState([])
+  const [wrongLetters, setWrongLetters] = useState([])
+  const [guesses, setGuesses] = useState(3)
+  const [score, setScore] = useState(0)
+
+  const pickWordAndCategory = () => {
+    const categories = Object.keys(words)
+    const category = categories[Math.floor(Math.random() * categories.length)]
+
+    const word = words[category][Math.floor(Math.random() * words[category].length)];
+
+    return { word, category };
+
+  }
   
 
-  const startGame = () => (
-    console.log(Object.keys(words)),
+  const startGame = () => {
+    // pick word and category
+    const { word, category } = pickWordAndCategory();
+    
+    // Create an array of letters
+    
+    let wordLetters = word.split("")
+    wordLetters = wordLetters.map((l) => l.toLowerCase())
+    
+    console.log(wordLetters)
+    console.log(word, category);
 
+    // Fill states
+    setPickedWord(word);
+    setPickedCategory(category);
+    setLetters(wordLetters);
 
     setGameStage(stages[1].name)
-  )
+  }
 
-  const endGame = () => {
+  const verifyLetter = () => {
     setGameStage(stages[2].name)
   }
   
@@ -40,12 +71,19 @@ function App() {
   }
 
   return (
-    <div className="App">
+  <div className="App">   
       {gameStage === 'start' && <PaginaInicial startGame={startGame}/>}
-      {gameStage === 'game' && <Game  endGame={endGame} />}
+
+      {gameStage === 'game' && <Game  verifyLetter={verifyLetter} 
+      pickedWord={pickedWord} 
+      pickedCategory={pickedCategory} 
+      letters={letters} 
+      guessedLetters={guessedLetters} 
+      wrongLetters={wrongLetters}
+      guesses={guesses}
+      score={score} />}
+
       {gameStage === 'end' && <EndGame restartGame={restartGame} />}
-
-
     </div>
   );
 }
